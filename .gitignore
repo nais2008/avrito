@@ -166,4 +166,4 @@ alembic/
 alembic.ini
 
 # Config
-data/config.py
+config.py
