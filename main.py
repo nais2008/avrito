@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/index.html', methods=['GET', 'POST'])
-def hello_world():
+@app.route('/index', methods=['GET', 'POST'])
+def index():
     return 'Hello World!'
 
 
