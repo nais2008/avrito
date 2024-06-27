@@ -10,7 +10,8 @@ alembic upgrade head - upgrade  --выполняет код для измене�
 """
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index.html', methods=['GET', 'POST'])
 def hello_world():
     return 'Hello World!'
 
