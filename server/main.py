@@ -4,39 +4,15 @@ from config import *
 import os
 
 
-# Функция для проверки и сохранения изображения продукта
-def save_image_product(image):
-    if image:
-        filename = secure_filename(image.filename)
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        image.save(image_path)
-        return filename
-    return None
-
-
-@app.route('/members', methods=['GET', 'POST'])
-def index():
+@app.route('/api/users', methods=['GET'])
+def users():
     return jsonify({
-        "title": [
-            "ch",
-            "qwe",
-            "asd"
+        "users": [
+            "efw",
+            "wefwef",
+            "wefwefwef"
         ]
     })
-
-
-# страница ошибки 401
-@app.errorhandler(401)
-def unauthorized(error):
-    return render_template(
-        '',
-        error=error.code,
-        message="У вас нет доступа к этой странице, либо вы не авторизованы",
-        title="401 Unauthorized",
-        css=url_for(
-            "static",
-            filename="css/error.css")
-    ), 401
 
 
 if __name__ == '__main__':
